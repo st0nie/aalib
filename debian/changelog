@@ -1,3 +1,12 @@
+aalib (1.4p5-50deepin1) unstable; urgency=medium
+
+  * Fix FTBFS with ncurses 6.x: aacurses.c accessed the private
+    _maxx/_maxy members of the opaque WINDOW struct; switch to the
+    public getmaxx()/getmaxy() accessors (which already return
+    max + 1, preserving the previous "_maxx + 1" semantics).
+
+ -- jiabowen <jiabowen@uniontech.com>  Mon, 06 Jul 2026 11:14:55 +0800
+
 aalib (1.4p5-50) unstable; urgency=medium
 
   * Fix standards version, set to 4.6.0 (Closes: #993729)
